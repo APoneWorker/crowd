@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <title>人群密度监控系统</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/materialize.min.css" media="screen,projection"/>
+    <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+    <link href="assets/css/font-awesome.css" rel="stylesheet"/>
+    <link href="assets/css/custom-styles.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">track_changes</i>
+                <strong>人群密度监控</strong></a>
+            <div id="sideNav" href=""><i class="material-icons dp48">toc</i></div>
+        </div>
+    </nav>
+
+    <!--导航栏-->
+    <nav class="navbar-default navbar-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav" id="main-menu">
+                <li>
+                    <a class="active-menu waves-effect waves-dark" href="index.html">
+                        <i class="fa fa-bar-chart-o"></i>
+                        人群监控
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="waves-effect waves-dark">
+                        <i class="fa fa-fw fa-file"></i>
+                        关于系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper">
+        <div class="header">
+            <h2 class="page-header">人群监控</h2>
+            <ol class="breadcrumb">
+                <li><a href="#">系统</a></li>
+                <li class="active">人群监控</li>
+            </ol>
+        </div>
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="card">
+                        <div class="card-action">
+                            <b>处理画面</b>
+                        </div>
+                        <div class="card-image">
+                            <img id='process_img' src="assets/img/loading.gif" alt="crowd img"/>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <canvas id="chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="dashboard-cards">
+                            <div class="col-lg-6">
+                                <div class="card horizontal cardIcon waves-effect waves-dark">
+                                    <div class="card-image green">
+                                        <i class="material-icons dp48">supervisor_account</i>
+                                    </div>
+                                    <div class="card-stacked green">
+                                        <div class="card-content">
+                                            <h3 id="crowd_result">None</h3>
+                                        </div>
+                                        <div class="card-action">
+                                            <strong>人群密度级别</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="card horizontal cardIcon waves-effect waves-dark">
+                                    <div class="card-image blue">
+                                        <i class="material-icons dp48">equalizer</i>
+                                    </div>
+                                    <div class="card-stacked blue">
+                                        <div class="card-content">
+                                            <h3>校内教学楼人行道</h3>
+                                        </div>
+                                        <div class="card-action">
+                                            <strong id="time">None Time</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img id='origin_img' src="assets/img/loading.gif" alt="crowd img"/>
+                                </div>
+                                <div class="card-action">
+                                    <b>实时监控画面</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <p>人群密度监控系统 Create by 陈彦军 2019</p>
+            </footer>
+        </div>
+    </div>
+</div>
+<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="assets/js/crowd-system.js"></script>
+</body>
+</html>
