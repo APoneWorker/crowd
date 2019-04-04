@@ -19,8 +19,8 @@ def video_stream(video):
         return None
 
 
-def files(obj, url):
-    file_name = url + str(obj.index) + '.png'
+def files(obj, url, max_frame):
+    file_name = url + str(obj.index % max_frame) + '.png'
     obj.index += 1
     if os.path.exists(file_name):
         img = cv.imread(file_name)
@@ -42,7 +42,7 @@ def desktop(box):
 
 class VideoStream:
 
-    def __init__(self, mode, url=None):
+    def __init__(self, mode, max_frame=None, url=None):
 
         if mode == VIDEO_STREAM:
             video = cv.VideoCapture(url)
@@ -52,9 +52,10 @@ class VideoStream:
         elif mode == FILES:
             self.index = 1
             self.url = url
+            self.max = max_frame
             if os.path.exists(url) is False:
                 print('folder not found')
-            self._args = (self, self.url,)
+            self._args = (self, self.url, self.max)
             self._target = files
 
         elif mode == DESKTOP:
