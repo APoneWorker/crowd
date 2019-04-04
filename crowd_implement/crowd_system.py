@@ -12,7 +12,8 @@ estimate_speed = 1 / 12
 
 # 背景更新
 def update_background(pool):
-    build_count = 200
+    print('updating background......')
+    build_count = 300
     images = []
     index = 0
     while index < build_count:
@@ -25,6 +26,7 @@ def update_background(pool):
 
     global background
     background = bc.build_background(images, build_count, bc.T_NORMAL)
+    print('update successful......')
 
 
 # 更新背景线程
@@ -41,9 +43,7 @@ def update_background_invoked(pool):
 def system_run():
     pool = redis.ImageCachePool('192.168.116.128', 6379)
     # 初始化背景建模
-    print('updating background......')
     update_background_invoked(pool)
-    print('update successful......')
 
     # 循环从缓存服务器中获取原始图像资源,但不会将图像弹出队列
     print('crowd estimate starting......')
