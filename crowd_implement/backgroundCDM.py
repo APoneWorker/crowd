@@ -4,6 +4,7 @@ Created on Sat Mar  9 13:39:04 2019
 
 @author: APone
 """
+# -*- coding: utf-8 -*-
 
 import cv2 as cv
 import numpy as np

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import utils.redis_utils as redis
 import threading
 import time

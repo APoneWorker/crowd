@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import redis
 import json
 import cv2 as cv
@@ -37,7 +39,7 @@ def convert(crowd_result, image_result):
 # 图片缓存池，有两个队列分别为检测结果队列和原始图像队列
 class ImageCachePool:
 
-    def __init__(self, host, port, password=None):
+    def __init__(self, host, port, password):
         pool = redis.ConnectionPool(host=host, port=port, password=password, decode_responses=True)
         self.r = redis.Redis(connection_pool=pool)
         self.origin_list_max = 6 * 1

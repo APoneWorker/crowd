@@ -1,5 +1,5 @@
 function origin() {
-    let ws = new WebSocket("ws://" + window.location.host);
+    let ws = new WebSocket("ws://" + window.location.host + ':81');
 
     ws.onopen = function () {
 
@@ -70,7 +70,7 @@ var config = {
 var index = 0;
 
 function result() {
-    let ws = new WebSocket("ws://" + window.location.host);
+    let ws = new WebSocket("ws://" + window.location.host + ':82');
     ws.onopen = function () {
 
     };

@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+
 import utils.redis_utils as redis
 import crowd_implement.crowd_system as crowd_system
+import config.config as config
 
-pool = redis.ImageCachePool('192.168.116.128', 6379)
+pool = redis.ImageCachePool(config.server_redis_ip, config.redis_port, config.redis_password)
 
 speed = crowd_system.speed
 

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import cv2 as cv
 import os
 from PIL import ImageGrab

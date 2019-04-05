@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from crowd_implement import backgroundCDM as bc
 from crowd_implement.glcm_utils import *
 import time
@@ -42,7 +44,7 @@ def update_background_invoked(pool):
 
 # 系统运行函数
 def system_run():
-    pool = redis.ImageCachePool(config.server_redis_ip, config.redis_port)
+    pool = redis.ImageCachePool(config.server_redis_ip, config.redis_port, config.redis_password)
     # 初始化背景建模
     update_background_invoked(pool)
 

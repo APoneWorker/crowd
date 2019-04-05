@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import crowd_implement.crowd_system as cc
 import threading
 import web_server
