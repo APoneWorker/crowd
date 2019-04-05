@@ -14,7 +14,7 @@ estimate_speed = 1 / 12
 # 背景更新
 def update_background(pool):
     print('updating background......')
-    build_count = 150
+    build_count = 300
     images = []
     index = 0
     while index < build_count:
