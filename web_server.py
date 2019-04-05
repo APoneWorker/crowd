@@ -2,6 +2,7 @@ from websocket_server import WebsocketServer
 import service.crowd_service as  service
 import time
 import threading
+import config.config as config
 
 
 # 新连接,同时开始传输原始监控画面
@@ -34,7 +35,7 @@ def client_left(client, server):
 
 # origin
 def origin_web():
-    origin_server = WebsocketServer(81, "127.0.0.1")
+    origin_server = WebsocketServer(config.origin_websocket_port, config.origin_websocket_ip)
     origin_server.set_fn_new_client(new_origin_client)
     origin_server.set_fn_client_left(client_left)
     origin_server.run_forever()
@@ -42,7 +43,7 @@ def origin_web():
 
 # result
 def result_web():
-    result_server = WebsocketServer(82, "127.0.0.1")
+    result_server = WebsocketServer(config.result_websocket_port, config.result_websocket_ip)
     result_server.set_fn_new_client(new_result_client)
     result_server.set_fn_client_left(client_left)
     result_server.run_forever()

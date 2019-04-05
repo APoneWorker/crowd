@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import os
 
 
 # 正态分布的朴素贝叶斯分类器

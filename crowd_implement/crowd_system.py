@@ -5,6 +5,7 @@ import threading
 import utils.redis_utils as redis
 import crowd_implement.naive_bayes_continuous as nbc
 import random
+import config.config as config
 
 speed = 1 / 24
 estimate_speed = 1 / 12
@@ -41,7 +42,7 @@ def update_background_invoked(pool):
 
 # 系统运行函数
 def system_run():
-    pool = redis.ImageCachePool('192.168.116.128', 6379)
+    pool = redis.ImageCachePool(config.server_redis_ip, config.redis_port)
     # 初始化背景建模
     update_background_invoked(pool)
 
