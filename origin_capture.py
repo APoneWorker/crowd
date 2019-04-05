@@ -14,7 +14,7 @@ port = 6379
 
 # 原始图像线程
 def origin_capture():
-    video = video_stream.VideoStream(video_stream.FILES, max_frame=5000, url='../ucsdpeds_vidf/all/')
+    video = video_stream.VideoStream(video_stream.FILES, max_frame=5000, url='../ucsdpeds_vidd/all/')
     image_pool = redis.ImageCachePool(host, port)
     # 每秒24帧
     while True:
