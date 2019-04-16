@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from websocket_server import WebsocketServer
-import service.crowd_service as  service
+import service.crowd_service as service
 import time
 import threading
 import config.config as config

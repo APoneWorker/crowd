@@ -28,7 +28,7 @@ def update_background(pool):
             index += 1
 
     global background
-    background = bc.build_background(images, build_count, bc.T_NORMAL)
+    background = bc.build_background(images, build_count, bc.T_BC)
     print('update successful......')
 
 

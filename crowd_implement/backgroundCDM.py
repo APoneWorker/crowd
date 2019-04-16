@@ -11,6 +11,8 @@ import numpy as np
 
 T_NORMAL = 3
 
+T_BC = 3
+
 
 # 构造背景
 def build_background(images, N, T):

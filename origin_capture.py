@@ -13,9 +13,10 @@ speed = 1 / 24
 
 # 原始图像线程
 def origin_capture():
-    video = video_stream.VideoStream(video_stream.FILES, max_frame=config.data_count_max, url=config.data)
+    video = video_stream.VideoStream(video_stream.DESKTOP, max_frame=config.data_count_max, url=config.data)
     image_pool = redis.ImageCachePool(config.origin_redis_ip, config.redis_port, config.redis_password)
     # 每秒24帧
+
     while True:
         time.sleep(speed)
         current_image = video.get_frame()

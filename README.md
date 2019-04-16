@@ -18,7 +18,8 @@
 <li>朴素贝叶斯分类(NBC)</li>
 
 <h4>How to run?</h4>
-Run system_init.py and origin_capture.py at the same time
+Run system_init.py and origin_capture.py at the same time<br/>
+Run system_start.sh to start system and system_stop.sh to stop system
 
 <h4>Warning in Redis!</h4>
 The system run with redis, and please modify the config of redis that you want

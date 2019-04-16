@@ -36,6 +36,8 @@ def desktop(box):
     img = ImageGrab.grab(box)
     if img:
         img = cv.cvtColor(np.array(img), cv.COLOR_RGB2BGR)
+        img_shape = img.shape
+        img = cv.resize(img, (img_shape[1] // 2, img_shape[0] // 2), interpolation=cv.INTER_CUBIC)
         return img
     else:
         print('capture error')
@@ -61,7 +63,7 @@ class VideoStream:
             self._target = files
 
         elif mode == DESKTOP:
-            self.box = (200, 200, 750, 480)
+            self.box = (0, 200, 900, 760)
             print('please select the screen, then enter key t to finish')
             while True:
                 img = ImageGrab.grab(self.box)
